@@ -1,6 +1,6 @@
 import React from "react";
 
-function GuessInput({ maxLength, minLength, handlesGuess }) {
+function GuessInput({ maxLength, minLength, handlesGuess, disabled }) {
   const [guess, setGuess] = React.useState("");
   return (
     <form
@@ -18,6 +18,7 @@ function GuessInput({ maxLength, minLength, handlesGuess }) {
         type="text"
         value={guess}
         onChange={(event) => setGuess(event.target.value.toUpperCase())}
+        disabled={disabled}
         maxLength={maxLength}
         minLength={minLength}
       />

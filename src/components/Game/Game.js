@@ -22,7 +22,7 @@ function Game() {
 
   return (
     <>
-      <GuessResults guesses={guesses} />
+      <GuessResults guesses={guesses} answer={answer} />
       <GuessInput minLength={5} maxLength={5} handlesGuess={handlesGuess} />
     </>
   );

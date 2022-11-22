@@ -1,20 +1,19 @@
 import React from "react";
 import { range } from "../../utils";
 
-function Guess({ guess }) {
-  if (guess) {
-    return guess.split("").map((letter, index) => {
-      return (
-        <span key={index} className="cell">
-          {letter}
-        </span>
-      );
-    });
-  } else {
-    return range(5).map((index) => {
-      return <span key={index} className="cell"></span>;
-    });
-  }
+function Guess({ guessValue }) {
+  return range(5).map((index) => {
+    return (
+      <span
+        key={index}
+        className={`cell ${
+          guessValue?.[index] ? guessValue[index].status : undefined
+        }`}
+      >
+        {guessValue?.[index] ? guessValue[index].letter : undefined}
+      </span>
+    );
+  });
 }
 
 export default Guess;
